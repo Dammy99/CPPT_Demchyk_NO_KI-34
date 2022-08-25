@@ -1,0 +1,14 @@
+I am: soo happy xD. And this is me 
+Meow
+I'm scraping the door
+Sleeping for 2hours
+Oh wow, there is a bird!!
+I'm eating Fish
+Full Properties START: -------------------
+Name: Simba
+Age: 4
+Breed: Scottish
+Color: Grey
+Weight: 5.5
+Am i ill - No
+Full Properties END: -------------------
