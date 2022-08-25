@@ -1,0 +1,8 @@
+Full Properties START: -------------------
+Name: Simba
+Age: 4
+Breed: Scottish
+Color: Grey
+Weight: 5.5
+Am i ill - No
+Full Properties END: -------------------
