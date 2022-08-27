@@ -1,14 +1,22 @@
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ExperimentalCat extends Cat implements Experiments {
+    private PrintWriter fout;
+
     public ExperimentalCat(float weight, String breed, String name, int age) throws FileNotFoundException {
         super(weight, breed, name, age);
+        fout = new PrintWriter(new File("CatLog.txt"));
+        setFout(fout);
     }
 
     public ExperimentalCat(float weight, String breed, String name, int age, String color)
             throws FileNotFoundException {
         super(weight, breed, name, age, color);
+        fout = new PrintWriter(new File("CatLog.txt"));
+        setFout(fout);
     }
 
     public void doing() {
@@ -22,12 +30,16 @@ public class ExperimentalCat extends Cat implements Experiments {
     @Override
     public void printAllCharacteristics() {
         super.printAllCharacteristics();
+
         try (Scanner scan = new Scanner(System.in)) {
-            System.out.println("Enter max speed of this cat in training :");
+            System.out.println("Enter max speed of this cat on training :");
             float speed = scan.nextFloat();
-            System.out.println("Max speed: " + catMaxSpeed(speed * potion));
+            System.out.println("After using potion max speed: " + catMaxSpeed(speed * potion));
+            fout.println("After using potion max speed: " + catMaxSpeed(speed * potion));
         }
-        System.out.println("New weight " + changingWeght());
+        System.out.println("After using potion new weight: " + changingWeght());
+        fout.println("After using potion new weight: " + changingWeght());
+
     }
 
     @Override
