@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-/*
+/**
  * Клас Lab2DemchykKI34 реалізує приклад програми до лабораторної роботи №2
  *
  * @author Demchyk Nazar
@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 public class Lab2DemchykKI34 {
-    /*
+    /**
      * Статичний метод main є точкою входу в програму
      *
      * @param args
@@ -67,6 +67,7 @@ public class Lab2DemchykKI34 {
                 System.out.println();
                 fout.print("\n");
             }
+            in.close();
             fout.flush();
             fout.close();
         }
