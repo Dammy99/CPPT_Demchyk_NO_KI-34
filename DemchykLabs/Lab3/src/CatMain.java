@@ -1,4 +1,3 @@
-
 public class CatMain {
     public static void main(String[] args) throws Exception {
         Cat Simba = new Cat(5.5f, "Scottish", "Simba", 4, "Grey");

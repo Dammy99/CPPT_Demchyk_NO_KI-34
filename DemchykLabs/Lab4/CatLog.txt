@@ -1,3 +1,5 @@
+Meow
+Sleeping for 2hours
 Full Properties START: -------------------
 Name: Simba
 Age: 4
@@ -6,3 +8,5 @@ Color: Grey
 Weight: 5.5
 Am i ill - No
 Full Properties END: -------------------
+After using potion max speed: 49.5
+After using potion new weight: 6.655

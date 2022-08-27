@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
@@ -15,14 +14,15 @@ public abstract class Cat {
         this.breed = breed;
         this.name = name;
         this.age = age;
-
-        fout = new PrintWriter(new File("CatLog.txt"));
     }
 
     public Cat(float weight, String breed, String name, int age, String color) throws FileNotFoundException {
         this(weight, breed, name, age);
         this.color = color;
+    }
 
+    protected void setFout(PrintWriter x) {
+        fout = x;
     }
 
     public void setWeight(float newWeight) {
