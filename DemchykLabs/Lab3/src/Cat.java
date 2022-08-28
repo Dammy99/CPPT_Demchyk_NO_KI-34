@@ -3,34 +3,33 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class Cat {
-    private float weight;
-    private String breed;
+    private Float weight;
     private String name;
-    private int age;
+    private Integer age;
     private String color;
     private PrintWriter fout;
+    private Breed classBreed;
+    private FoodAddiction addiction;
+    private FleaInfestation flea;
 
     public Cat(float weight, String breed, String name, int age) throws FileNotFoundException {
         this.weight = weight;
-        this.breed = breed;
         this.name = name;
         this.age = age;
-
+        classBreed = new Breed(breed);
+        addiction = new FoodAddiction();
+        flea = new FleaInfestation();
         fout = new PrintWriter(new File("CatLog.txt"));
     }
 
     public Cat(float weight, String breed, String name, int age, String color) throws FileNotFoundException {
         this(weight, breed, name, age);
         this.color = color;
-
     }
 
+    // this classes methods
     public float getWeight() {
         return weight;
-    }
-
-    public String getBreed() {
-        return breed;
     }
 
     public String getName() {
@@ -88,18 +87,42 @@ public class Cat {
             return true;
         }
     }
+    // 3 classes methods
+
+    public void setFur(String fur) {
+        classBreed.setFur(fur);
+    }
+
+    public void setNature(String nature) {
+        classBreed.setNature(nature);
+    }
+
+    public void setFoodTime(int foodTime) {
+        addiction.setFoodTimes(foodTime);
+    }
+
+    public void setFoodGram(int foodGram) {
+        addiction.setFoodGrams(foodGram);
+    }
+
+    public void setFlea(boolean yes) {
+        flea.setFlea(yes);
+    }
+
+    public void setPercentage(int per) {
+        flea.setPercentageOfFlea(per);
+    }
 
     public void printAllCharacteristics() {
         System.out.println("Full Properties START: -------------------");
         fout.println("Full Properties START: -------------------");
+
+        // this class
         System.out.println("Name: " + getName());
         fout.println("Name: " + getName());
 
         System.out.println("Age: " + getAge());
         fout.println("Age: " + getAge());
-
-        System.out.println("Breed: " + getBreed());
-        fout.println("Breed: " + getBreed());
 
         if (color != null) {
             System.out.println("Color: " + getColor());
@@ -111,6 +134,21 @@ public class Cat {
 
         System.out.println("Am i ill - " + (isIll() ? "Yes" : "No"));
         fout.println("Am i ill - " + (isIll() ? "Yes" : "No"));
+
+        // 3 classes
+        classBreed.printBreed();
+        fout.println("Breed is : " + classBreed.getBreed());
+        fout.println("Fur is : " + classBreed.getFur());
+        fout.println("Nature is : " + classBreed.getNature());
+
+        flea.printFlea();
+        fout.println("Has flea ? : " + flea.getFlea());
+        fout.println("Possibility to get flea : " + flea.getFlea());
+
+        addiction.printFood();
+        fout.println("How many times needs to eat ? : " + addiction.getFoodTimes());
+        fout.println("Food in grams for cat for 1 bowl: " + addiction.getFoodGrams());
+
         System.out.println("Full Properties END: -------------------");
         fout.println("Full Properties END: -------------------");
         fout.flush();
