@@ -31,15 +31,15 @@ public class ExperimentalCat extends Cat implements Experiments {
     public void printAllCharacteristics() {
         super.printAllCharacteristics();
 
-        try (Scanner scan = new Scanner(System.in)) {
-            System.out.println("Enter max speed of this cat on training :");
-            float speed = scan.nextFloat();
-            System.out.println("After using potion max speed: " + catMaxSpeed(speed * potion));
-            fout.println("After using potion max speed: " + catMaxSpeed(speed * potion));
-        }
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter max speed of this cat on training :");
+        float speed = scan.nextFloat();
+        System.out.println("After using potion max speed: " + catMaxSpeed(speed * potion));
+        fout.println("After using potion max speed: " + catMaxSpeed(speed * potion));
+
         System.out.println("After using potion new weight: " + changingWeght());
         fout.println("After using potion new weight: " + changingWeght());
-
+        scan.close();
     }
 
     @Override

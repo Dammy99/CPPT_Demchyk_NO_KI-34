@@ -7,8 +7,14 @@ I'm eating Fish
 Full Properties START: -------------------
 Name: Simba
 Age: 4
-Breed: Scottish
 Color: Grey
 Weight: 5.5
 Am i ill - No
+Breed is : Scottish
+Fur is : thick
+Nature is : calm
+Has flea ? : true
+Possibility to get flea : true
+How many times needs to eat ? : 2
+Food in grams for cat for 1 bowl: 34.0
 Full Properties END: -------------------
