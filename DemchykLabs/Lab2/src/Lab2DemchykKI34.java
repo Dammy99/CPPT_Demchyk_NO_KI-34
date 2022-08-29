@@ -29,18 +29,14 @@ public class Lab2DemchykKI34 {
         System.out.print("Введiть розмiр квадратної матрицi: ");
         nRows = in.nextInt();
         in.nextLine();
-
-        if (nRows % 2 == 0) {
-            arr = new char[nRows / 2][];
-            for (int i = 0; i < nRows / 2; i++) {
-                arr[i] = new char[nRows / 2 + 1 + i];
-            }
-        } else {
-            arr = new char[nRows / 2 + 1][];
-            for (int i = 0; i < nRows / 2 + 1; i++) {
-                arr[i] = new char[nRows / 2 + 1 + i];
-            }
+        arr = new char[nRows][];
+        for (int i = 0; i < nRows / 2; i++) {
+            arr[i] = new char[0];
         }
+        for (int i = nRows / 2; i < nRows; i++) {
+            arr[i] = new char[i + 1];
+        }
+
         System.out.print("\nВведiть символ-заповнювач: ");
         filler = in.nextLine();
 
@@ -51,20 +47,19 @@ public class Lab2DemchykKI34 {
             System.out.print("\nЗабагато символiв заповнювачiв");
             break exit;
         } else {
-
-            for (int i = 0; i < (nRows % 2 == 0 ? nRows / 2 : nRows / 2 + 1); i++) {
-
-                for (int j = 0; j < nRows / 2 + 1 + i; j++) {
+            for (int i = 0; i < nRows / 2; i++) {
+                System.out.println(arr[i]);
+                fout.println();
+            }
+            for (int i = nRows / 2, b = 0; i < nRows; i++, b++) {
+                for (int j = 0; j < i + 1; j++) {
                     arr[i][j] = filler.charAt(0);
                 }
-                for (int j = (nRows % 2 == 0 ? (nRows / 2 - 2) - i : (nRows / 2 - 1) - i); j > -1; j--) {
+                for (int j = 0; nRows % 2 == 0 ? j <= ((nRows / 2) - 2) - b : j <= ((nRows / 2) - 1) - b; j++) {
                     arr[i][j] = ' ';
                 }
-                for (int j = 0; j < nRows / 2 + 1 + i; j++) {
-                    System.out.print(arr[i][j]);
-                    fout.print(arr[i][j]);
-                }
-                System.out.println();
+                System.out.println(arr[i]);
+                fout.print(arr[i]);
                 fout.print("\n");
             }
             in.close();
